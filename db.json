@@ -1,0 +1,32 @@
+{
+  "clientes": [
+    {
+      "nombre": "Cristitan",
+      "email": "clepez@gmail.com",
+      "telefono": 998228351,
+      "empresa": "Zorropolar",
+      "id": 1
+    },
+    {
+      "nombre": "Maxi",
+      "email": "clepez@gmail.com",
+      "telefono": 998228351,
+      "empresa": "Zorropolar",
+      "id": 2
+    },
+    {
+      "nombre": "Marcelita",
+      "email": "marcel@correo.cl",
+      "telefono": "782863373",
+      "empresa": "Marcelita Inc",
+      "id": 3
+    },
+    {
+      "nombre": "Kronsito",
+      "email": "kron@dogmail.com",
+      "telefono": "345345",
+      "empresa": "Kron SA",
+      "id": 4
+    }
+  ]
+}
