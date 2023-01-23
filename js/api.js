@@ -29,7 +29,23 @@ export const nuevoCliente = async (cliente) => {
                 'Content-Type': 'application/json'
             }
         }); 
+        
+        window.location.href='index.html';
+
     } catch (error) {
         throw error;
     }
-}
+    //console.log('Llamará a la página!');
+
+};
+
+export const eliminarCliente = async (id) => {
+    try {
+        // http://localhost/3000/clientes/1 2 (id)
+        await fetch(`${URL}/${id}`,{
+            method: 'DELETE'
+        });
+    } catch (error) {
+        throw error;
+    }
+};

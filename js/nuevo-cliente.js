@@ -11,7 +11,7 @@ import { validatorObject } from "./utils/validator-object.js";
     function validarCliente(event){
         
         //Se evita que el formulario ejecute su método submit por defecto
-        event.preventDefault(); //Esta línea no funciona, el navegador dice que no es una función
+        event.preventDefault(); 
         const nombre = document.querySelector('#nombre').value;
         const email = document.querySelector('#email').value;
         const telefono = document.querySelector('#telefono').value;

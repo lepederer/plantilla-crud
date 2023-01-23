@@ -1,8 +1,8 @@
-import { obtenerClientes } from './api.js';
+import { obtenerClientes, eliminarCliente } from './api.js';
 
 (() => {
     //console.log('Soy una funcion autoinvocada!!');
-    let nombre = 'Lepito';
+    //let nombre = 'Lepito';
 
     //the tbody located in the html document is stored in this variable
     const listado = document.querySelector('#listado-clientes');
@@ -11,6 +11,9 @@ import { obtenerClientes } from './api.js';
     //The DOMContentLoaded event will wait for all the page information to load.
     //once to all the information is loaded, the event will call the function mostrarClientes
     document.addEventListener('DOMContentLoaded', mostrarClientes);
+
+    //* called to eliminar function 
+    listado.addEventListener('click', confirmarEliminar);
 
     //La función será una promesa porque está declarado como promesa en la función obntenerClientes
     //Y como es una promesa, necesitamos el async await para controla la sincronía de esta función
@@ -38,17 +41,43 @@ import { obtenerClientes } from './api.js';
                 <p>${empresa}</p>
             </td>
             <td>
-                <p>${id}</p>
-            </td>
-            <td>
-                <a>Editar</a>
-                <a>Eliminar</a>
+                <a>${id} Editar</a>
+                <a href="#" data-cliente="${id}" class="eliminar">
+                    Eliminar
+                </a>
             </td>
         `;
         //Al elemento TBODY le agregamos todo el codigo que hemos creado para el row
         listado.appendChild(row);
 
         });
+    };
+
+    function confirmarEliminar(event){
+        // console.log('Click en eliminar');
+        // console.log(event.target.classList);
+        // console.log(event.target.classList.contains('eliminar'));
+        if(event.target.classList.contains('eliminar')){
+            //El dataset del href de eliminar se llama data-cliente. Data es palabra obligatoria, no cambia, y cliente es el nombre del dataset
+            //console.log(event.target.dataset.cliente);  //retorna un valor de tipo string
+            const clienteId = parseInt(event.target.dataset.cliente); //Se transforma en numerico
+
+            //Mensaje de alerta
+            //Lo sacamos de la fuete sweet alert en la web, del que hacemos referencia en el archivo index.html //cdn.jsdelivr.net/npm/sweetalert2@11
+            Swal.fire({
+                title: 'Are you sure you want to delete?',
+                text: "You will be not able to recovery this user's information",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  eliminarCliente(clienteId);
+                }
+              })
+        }
     }
 
 

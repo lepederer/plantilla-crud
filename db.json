@@ -27,6 +27,34 @@
       "telefono": "345345",
       "empresa": "Kron SA",
       "id": 4
+    },
+    {
+      "nombre": "Pipin",
+      "email": "pipin@dogmail.com",
+      "telefono": "345345",
+      "empresa": "LOTR",
+      "id": 5
+    },
+    {
+      "nombre": "Sam",
+      "email": "sam@correo.cl",
+      "telefono": "3452345",
+      "empresa": "LOTR",
+      "id": 6
+    },
+    {
+      "nombre": "Sam y Merry",
+      "email": "sam@correo.cl",
+      "telefono": "3452345",
+      "empresa": "LOTR",
+      "id": 7
+    },
+    {
+      "nombre": "Frodo",
+      "email": "frodo@correo.cl",
+      "telefono": "345234",
+      "empresa": "LOTR",
+      "id": 8
     }
   ]
 }
